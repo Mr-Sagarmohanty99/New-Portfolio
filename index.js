@@ -1,3 +1,4 @@
+
 // ---------------------- NAVBAR SCROLL EFFECT ----------------------
 const nav = document.getElementById("nav");
 
@@ -68,3 +69,45 @@ const obs = new IntersectionObserver(
 
 sectionHeadings.forEach((h) => obs.observe(h));
 heading.classList.add("animate");
+
+
+const skillSection = document.querySelector("#skills");
+const skillBars = document.querySelectorAll(".skill-bar span");
+
+const skillObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      skillBars.forEach(bar => {
+        bar.style.width = bar.dataset.level;
+      });
+      skillObserver.disconnect(); // animate once
+    }
+  });
+}, { threshold: 0.5 });
+
+skillObserver.observe(skillSection);
+
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 10;
+  const y = (e.clientY / window.innerHeight - 0.5) * 10;
+
+  document.querySelector(".bg-video").style.transform =
+    `translate(${x}px, ${y}px) scale(1.05)`;
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    const targetId = link.getAttribute("href");
+    const target = document.querySelector(targetId);
+
+    const yOffset = -70; // navbar height
+    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth"
+    });
+  });
+});
