@@ -111,3 +111,41 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
   });
 });
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  const scrolled = (scrollTop / docHeight) * 100;
+  document.getElementById("scroll-progress").style.width = scrolled + "%";
+});
+
+
+function validateForm() {
+
+  const name = document.querySelector('input[name="name"]').value.trim();
+  const email = document.querySelector('input[name="email"]').value.trim();
+  const message = document.querySelector('textarea[name="message"]').value.trim();
+
+  const nameRegex = /^[A-Za-z ]{3,}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!nameRegex.test(name)) {
+    alert("❌ Name must contain only letters (minimum 3 characters)");
+    return false;
+  }
+
+  if (!emailRegex.test(email)) {
+    alert("❌ Please enter a valid email address");
+    return false;
+  }
+
+  if (message.length < 10) {
+    alert("❌ Message must be at least 10 characters long");
+    return false;
+  }
+
+  return true; // ✅ form submit
+}
