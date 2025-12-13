@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,17 +30,18 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-
-    <!-- Background Video -->
+<!-- Background Video -->
     <video class="bg-video" autoplay loop muted playsinline>
       <source src="https://cdn.pi.inc/dog/sal-assets/homelj/homebg2_1440p.webm" type="video/webm">
     </video>
 
     <div class="overlay"></div>
 
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+
     <div class="hero-content">
+      
       <div class="left">
         <h1>
           <span class="neon">Hi, I'm Sagar</span><br>
@@ -89,7 +91,36 @@
         </div>
       </aside>
     </div>
+    <div class="scroll-indicator">
+  <span></span>
+</div>
+
   </section>
+
+  <section id="experience">
+  <h2 class="section-heading">Experience</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <span class="year">2025</span>
+      <div class="content">
+        <h3>AI Intern – CodSoft</h3>
+        <p>Worked on rule-based chatbots and AI logic systems.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="year">2024</span>
+      <div class="content">
+        <h3>Embedded & Cybersecurity Intern</h3>
+        <p>Hands-on experience with microcontrollers and security tools.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- ABOUT SECTION (futuristic combined layout) -->
     <section id="about" class="about-section">
@@ -122,6 +153,9 @@
           </div>
         </div>
       </div>
+      <div class="scroll-indicator">
+  <span></span>
+</div>
     </section>
 
     <!-- PROJECTS (simple placeholders) -->
@@ -132,7 +166,6 @@
 
     <!-- Project 1 -->
     <div class="project-card">
-      <div class="project-glow"></div>
       <img src="https://images.unsplash.com/photo-1581093588401-22e8a6cfa41d?q=80" alt="Project Image">
       <h3>AI Based Smart System</h3>
       <p>A futuristic embedded AI project with hardware + software integration.</p>
@@ -140,7 +173,6 @@
 
     <!-- Project 2 -->
     <div class="project-card">
-      <div class="project-glow"></div>
       <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80" alt="Project Image">
       <h3>VLSI RTL Design Project</h3>
       <p>HDL based RTL architecture simulation with timing optimization.</p>
@@ -148,7 +180,6 @@
 
     <!-- Project 3 -->
     <div class="project-card">
-      <div class="project-glow"></div>
       <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80" alt="Project Image">
       <h3>Embedded IoT Prototype</h3>
       <p>Microcontroller + sensor-based real-world monitoring device.</p>
@@ -159,16 +190,63 @@
 
 
     <!-- SKILLS (reusable, kept simple) -->
-    <section id="skills">
-      <h2 class="section-heading">Skills</h2>
-      <p style="text-align:center;opacity:0.85;">Embedded Systems • VLSI • Signal Processing • AI • PCB Design</p>
-    </section>
+   <section id="skills">
+  <h2 class="section-heading">Skills</h2>
+
+  <div class="skills-container">
+
+    <div class="skill-card">
+      <h3>Embedded Systems</h3>
+      <div class="skill-bar">
+        <span data-level="width:90%"></span>
+      </div>
+      <p>Microcontrollers, Sensors, Embedded C</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>VLSI / RTL</h3>
+      <div class="skill-bar">
+        <span data-level="width:78%"></span>
+      </div>
+      <p>Verilog, RTL Design, Timing Analysis</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>AI & Software</h3>
+      <div class="skill-bar">
+        <span data-level="width:82%"></span>
+      </div>
+      <p>Python, ML Basics, Automation</p>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- CONTACT -->
     <section id="contact">
-      <h2 class="section-heading">Contact</h2>
-      <p style="text-align:center;opacity:0.85;">Email: <a href="mailto:sagar@example.com">sagar@example.com</a></p>
-    </section>
+  <h2 class="section-heading">Contact</h2>
+
+  <form class="contact-form">
+    <div class="input-box">
+      <input type="text" required>
+      <label>Name</label>
+    </div>
+
+    <div class="input-box">
+      <input type="email" required>
+      <label>Email</label>
+    </div>
+
+    <div class="input-box">
+      <textarea required></textarea>
+      <label>Message</label>
+    </div>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
 <div class="about-bg-transition"></div>
 
 
