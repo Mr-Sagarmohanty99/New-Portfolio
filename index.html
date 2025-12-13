@@ -37,6 +37,7 @@
     </video>
 
     <div class="overlay"></div>
+    <div id="scroll-progress"></div>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
@@ -50,7 +51,7 @@
         </h1>
 
         <p class="lead">
-          I build Embedded Systems, AI prototypes, and futuristic digital experiences with production-ready engineering.
+          I build embedded systems, AI prototypes, and futuristic digital experiences with production-ready engineering.
         </p>
 
         <div class="cta">
@@ -67,7 +68,7 @@
           </div>
           <div class="who">
             <h3>Sagar Mohanty</h3>
-            <small>Embedded | VLSI | PCB Design</small>
+            <small>Embedded | VLSI | AI</small>
           </div>
         </div>
 
@@ -106,19 +107,27 @@
     <div class="timeline-item">
       <span class="year">2025</span>
       <div class="content">
-        <h3>Embedded System Design Intern - Emertexe Technologies Pvt. Ltd.</h3>
-        <p>Hands-on experience with microcontrollers and security tools.</p>
+        <h3>Embedded System Design Intern - Emertxe Technologies Pvt. Ltd</h3>
+        <p>Hands-on experience with microcontrollers and Embedded Software PCB tools.</p>
       </div>
     </div>
 
     <div class="timeline-item">
-      <span class="year">2024</span>
+      <span class="year">2025</span>
       <div class="content">
-        <h3>Web Developer Intern - Codsoft</h3>
-        <p>Hands-on experience by build and host a Commercial Website using Frontend Libraries.</p>
+        <h3>Web Development Intern - Launch Spring (Vislona)</h3>
+        <p>Hands-on by buiding and hosting a commercial website. (Tour Guide India)</p>
       </div>
     </div>
 
+    <div class="timeline-item">
+      <span class="year">2023</span>
+      <div class="content">
+        <h3>Locomotive Technician Intern - BHEL, Haridwar</h3>
+        <p>Hands-on experience by learning and analyzing the tools, hardware, 
+          principle and working of Locomotive serving in Indian Railways.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -135,7 +144,7 @@
         <div class="about-right">
           <h2 class="section-heading">About Me</h2>
           <p class="about-text">
-            I'm an Electronics Engineer & Chip Designer passionate about Embedded Systems, VLSI architectures, chip designing and futuristic digital experiences.
+            I'm an Electronics & AI Engineer passionate about Embedded Systems, VLSI architectures, and futuristic digital experiences.
             I design hardware-software systems — from PCB & chip design to AI-enabled prototypes and production-ready embedded solutions.
           </p>
 
@@ -149,8 +158,8 @@
           <div class="stats-grid">
             <div class="stat-card"><h3>5+</h3><p>Projects</p></div>
             <div class="stat-card"><h3>5+</h3><p>Core Skills</p></div>
-            <div class="stat-card"><h3>2+</h3><p>Years Experience</p></div>
-            <div class="stat-card"><h3>PCB Design / Embedded Dev</h3><p>Focus</p></div>
+            <div class="stat-card"><h3>2+</h3><p>Years Experience on Industry 4.0</p></div>
+            <div class="stat-card"><h3>Embedded / Chip Design</h3><p>Focus</p></div>
           </div>
         </div>
       </div>
@@ -168,14 +177,15 @@
     <!-- Project 1 -->
     <div class="project-card">
       <img src="https://images.unsplash.com/photo-1581093588401-22e8a6cfa41d?q=80" alt="Project Image">
-      <h3>AI Based Smart System</h3>
-      <p>A futuristic embedded AI project with hardware + software integration.</p>
+      <h3>Tour Guide India</h3>
+      <p>A Commercial Tourist Guiding Webpage with futurstic and user friendly interface.</p>
     </div>
 
     <!-- Project 2 -->
     <div class="project-card">
       <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80" alt="Project Image">
-      <h3>VLSI RTL Design Project</h3>
+      <h3>Smart Calandar with Notice Board</h3>
+      <p>A futuristic embedded AI project with hardware + software integration.</p>
       <p>HDL based RTL architecture simulation with timing optimization.</p>
     </div>
 
@@ -213,11 +223,11 @@
     </div>
 
     <div class="skill-card">
-      <h3>AI & Software</h3>
+      <h3>Chip Design</h3>
       <div class="skill-bar">
         <span data-level="width:82%"></span>
       </div>
-      <p>Python, ML Basics, Automation</p>
+      <p>Implementation, Design Basics, Automation, CAD Software</p>
     </div>
 
   </div>
@@ -228,30 +238,91 @@
     <section id="contact">
   <h2 class="section-heading">Contact</h2>
 
-  <form class="contact-form">
-    <div class="input-box">
-      <input type="text" required>
-      <label>Name</label>
-    </div>
+  <form class="contact-form" onsubmit="return validateForm()">
 
-    <div class="input-box">
-      <input type="email" required>
-      <label>Email</label>
-    </div>
+  <div class="input-box">
+    <input 
+      type="text" 
+      name="name"
+      required
+      spellcheck="true"
+      pattern="[A-Za-z ]{3,}"
+      title="Name should contain only letters (min 3 characters)">
+    <label>Name</label>
+  </div>
 
-    <div class="input-box">
-      <textarea required></textarea>
-      <label>Message</label>
-    </div>
+  <div class="input-box">
+    <input 
+      type="email" 
+      name="email"
+      required
+      title="Please enter a valid email address">
+    <label>Email</label>
+  </div>
 
-    <button type="submit">Send Message</button>
-  </form>
+  <div class="input-box">
+    <textarea 
+      name="message"
+      required
+      spellcheck="true"
+      minlength="10"
+      title="Message should be at least 10 characters long"></textarea>
+    <label>Message</label>
+  </div>
+
+  <button type="submit">Send Message</button>
+
+</form>
+
 </section>
 
 <div class="about-bg-transition"></div>
 
+<footer class="glass-footer">
+  <div class="glass-footer-container">
 
-  <!-- JS File -->
-  <script src="index.js"></script>
-</body>
-</html>
+    <div class="glass-col">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">My Achievements</a></li>
+        <li><a href="#">Research Reports</a></li>
+      </ul>
+    </div>
+
+    <div class="glass-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#">Free Advised</a></li>
+        <li><a href="#">Hackathons</a></li>
+        <li><a href="#">My Gallery</a></li>
+      </ul>
+    </div>
+
+    <div class="glass-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Copyright Agreement</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Testimonials</a></li>
+      </ul>
+    </div>
+
+    <div class="glass-col newsletter">
+      <h4>Newsletter</h4>
+      <p>Get updates on my latest projects, embedded systems work, and tech insights.</p>
+
+      <div class="glass-socials">
+        <a class="fb" href="#https://www.facebook.com/share/16kVgZgZNB/?mibextid=qi2Omg">f</a>
+        <a class="tw" href="#https://www.linkedin.com/in/sagar-mohanty-388624264/">t</a>
+        <a class="ig" href="#https://www.instagram.com/_alp__er.sagar__07?igsh=eXE0ZjBsbzh3cjhv">i</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="glass-footer-bottom">
+    © 2026 All Rights Reserved. S.M. Electonics Limited, Odisha (SMEL)
+  </div>
+</footer>
