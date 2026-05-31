@@ -72,7 +72,7 @@ heading.classList.add("animate");
 
 
 const skillSection = document.querySelector("#skills");
-const skillBars = document.querySelectorAll(".skill-bar span");
+const skillBars = document.querySelectorAll(".skill-bar-skill span");
 
 const skillObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -149,3 +149,4 @@ function validateForm() {
 
   return true; // ✅ form submit
 }
+});
