@@ -88,24 +88,79 @@ section .section-heading {
   z-index: 1;
 }
 
-.bg-video {
+/* Fixed Semiconductor Background */
+
+.bg-image {
   position: fixed;
   inset: 0;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: brightness(0.68) contrast(1.12) saturate(1.2);
-  z-index: -2;
+
+  background-image: url("BG for wbs.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+
+  z-index: -3;
+
+  /* Premium look */
+  transform: scale(1.05);
 }
+
+/* Dark Overlay */
 
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(3,5,10,0.32);
-  backdrop-filter: blur(2px);
-  z-index: -1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.72) 0%,
+      rgba(0,0,0,0.55) 35%,
+      rgba(0,0,0,0.45) 100%
+    );
+
+  z-index: -2;
+}
+
+/* Extra Tech Glow Layer */
+
+.overlay::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 70% 40%,
+      rgba(0,120,255,0.15),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+/* Optional subtle noise */
+
+.overlay::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.03;
+
+  background-image:
+  repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,0.05) 3px
+  );
+
+  pointer-events: none;
 }
 
 .hero-content {
