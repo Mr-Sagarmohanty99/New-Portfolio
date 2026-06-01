@@ -554,6 +554,10 @@ h1 {
 .chip .tip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:5px solid transparent; border-top-color:#fff; }
 .chip:hover .tip { opacity:1; transform:translateX(-50%) translateY(0); }
 
+:root {
+  --neon-cyan: #00d1ff;
+  --neon-purple: #8b4dff;
+}
 
 #contact {
   padding: 100px 0;
