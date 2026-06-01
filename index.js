@@ -68,14 +68,14 @@ const obs = new IntersectionObserver(
 );
 
 sectionHeadings.forEach((h) => obs.observe(h));
-heading.classList.add("animate");
+
 
 document.addEventListener("mousemove", (e) => {
   const x = (e.clientX / window.innerWidth - 0.5) * 10;
   const y = (e.clientY / window.innerHeight - 0.5) * 10;
 
-  document.querySelector(".bg-video").style.transform =
-    `translate(${x}px, ${y}px) scale(1.05)`;
+  const bgImage = document.querySelector(".bg-image");
+if (bgImage) bgImage.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
