@@ -137,4 +137,45 @@ document.addEventListener("DOMContentLoaded", () => {
   build(row1, 'row1');
   build(row2, 'row2');
 
+  // ---------------------- EMAILJS CONTACT FORM ----------------------
+
+emailjs.init({
+  publicKey: "Rw-ff9TSxTqrzKech"
+});
+
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    // Existing validation
+    if (!validateForm()) {
+      return;
+    }
+
+    emailjs.sendForm(
+      "service_ct8ittg",
+      "template_w4zhi9b",
+      this
+    )
+    .then(() => {
+
+      alert("✅ Message sent successfully!");
+
+      contactForm.reset();
+
+    })
+    .catch((error) => {
+
+      console.error("EmailJS Error:", error);
+
+      alert("❌ Failed to send message. Please try again.");
+
+    });
+
+  });
+}
+  
 }); // end DOMContentLoaded
