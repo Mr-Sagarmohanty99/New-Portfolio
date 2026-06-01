@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", () => {
 // ---------------------- NAVBAR SCROLL EFFECT ----------------------
 const nav = document.getElementById("nav");
 
