@@ -7,7 +7,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
-
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <!-- CSS File -->
   <link rel="stylesheet" href="index.css" />
 </head>
@@ -217,7 +217,7 @@
 </section>
 
    <!-- SKILLS (reusable, kept simple) -->
-   <section class="skills-section">
+   <section class="skills-section" id="skills">
     <h2 class="section-heading">Skills</h2>
   <p class="skills-title">Technologies &amp; Tools</p>
   <div class="marquee-wrapper">
@@ -231,7 +231,7 @@
     <section id="contact">
   <h2 class="section-heading">Contact</h2>
 
-  <form class="contact-form" onsubmit="return validateForm()">
+  <form class="contact-form">
 
   <div class="input-box">
     <input 
