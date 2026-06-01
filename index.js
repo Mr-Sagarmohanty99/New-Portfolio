@@ -53,6 +53,41 @@ document.addEventListener("DOMContentLoaded", () => {
     hero.style.opacity = Math.max(0, 1 - scrollY * 0.0015);
   });
 
+
+// ----------------------EXPERIENCE SECTION-------------------------------
+ const filterButtons = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".exp-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        cards.forEach(card => {
+
+            if (
+                filter === "all" ||
+                card.classList.contains(filter)
+            ) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
+  
+
   // ---------------------- ABOUT BG TRANSITION ----------------------
   const aboutSection = document.getElementById("about");
   const aboutBG = document.querySelector(".about-bg-transition");
