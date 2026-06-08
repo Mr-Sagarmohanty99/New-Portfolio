@@ -1152,3 +1152,159 @@ footer { text-align:center; padding:40px 0; opacity:0.75; }
     justify-content: center;
   }
 }
+
+/* ===========================
+   ACCESS SCREEN
+=========================== */
+
+#access-screen{
+    position:fixed;
+    inset:0;
+    z-index:999999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at center,
+    #07111f,
+    #02040b);
+
+    overflow:hidden;
+}
+
+#access-screen::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,255,255,.03) 3px
+    );
+
+    animation:scan 8s linear infinite;
+}
+
+.access-box{
+    width:500px;
+    max-width:90%;
+
+    text-align:center;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(18px);
+
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px solid rgba(0,255,255,.15);
+
+    box-shadow:
+    0 0 50px rgba(0,255,255,.15);
+}
+
+.access-icon{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.access-box h1{
+    color:#00eaff;
+    margin-bottom:10px;
+    letter-spacing:3px;
+}
+
+.access-box p{
+    color:#aaa;
+    margin-bottom:35px;
+}
+
+.verify-box{
+    width:280px;
+    margin:auto;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    background:#fff;
+
+    color:#000;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.verify-box:hover{
+    transform:scale(1.03);
+}
+
+.check-circle{
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+    border:2px solid #555;
+}
+
+.loading-area{
+    margin-top:30px;
+}
+
+.loading-bar{
+    width:100%;
+    height:8px;
+
+    background:#111;
+    border-radius:50px;
+
+    overflow:hidden;
+}
+
+.loading-fill{
+    width:0%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    #00eaff,
+    #7d5fff
+    );
+
+    transition:2.5s linear;
+}
+
+#statusText{
+    display:block;
+    margin-top:12px;
+    color:#9aa0aa;
+}
+
+@keyframes scan{
+
+    from{
+        transform:translateY(-100%);
+    }
+
+    to{
+        transform:translateY(100%);
+    }
+}
