@@ -101,7 +101,7 @@ section .section-heading {
   width: 100%;
   height: 100%;
 
-  background-image: url("BG for wbs.jpg");
+  background-image: url("Imagebase/BG for wbs.jpg");
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -815,6 +815,133 @@ ul {
 .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
   background-color: #ff0000;
 }
+
+.ticker-section {
+    padding: 60px 0;
+    background: transparent; /* Piche ka theme visible rahega */
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Matching the glowing header style */
+.ticker-heading {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(0, 149, 255, 0.5); /* Subtle Neon Glow */
+}
+
+/* Wrapper creates the viewport window */
+.ticker-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 0;
+    display: flex;
+}
+
+/* Neon/Dark Blur effect on edges matching your navbar blend */
+.ticker-wrapper::before,
+.ticker-wrapper::after {
+    content: "";
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ticker-wrapper::before {
+    left: 0;
+    top: 0;
+    background: linear-gradient(to right, rgba(10, 15, 30, 1) 0%, rgba(10, 15, 30, 0) 100%);
+}
+
+.ticker-wrapper::after {
+    right: 0;
+    top: 0;
+    background: linear-gradient(to left, rgba(10, 15, 30, 1) 0%, rgba(10, 15, 30, 0) 100%);
+}
+
+/* The continuous rolling track */
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: scrollInfinite 30s linear infinite;
+}
+
+/* Dark Theme Premium Cards */
+.ticker-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03); /* Semi-transparent Glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 0 15px;
+    width: 170px;
+    height: 110px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Images setup */
+.ticker-item img {
+    max-width: 80%;
+    max-height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.3));
+}
+
+/* Simple utility class if an icon is black and needs to be white */
+.white-invert {
+    filter: invert(1) !important;
+}
+
+/* Text styling under logos */
+.ticker-item span {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* PAUSE EFFECT ON HOVER */
+.ticker-track:hover {
+    animation-play-state: paused;
+}
+
+/* Glow and Lift effect on card hover */
+.ticker-item:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #0095ff; /* Cyan/Blue neon border match */
+    box-shadow: 0 0 15px rgba(0, 149, 255, 0.4);
+}
+
+.ticker-item:hover span {
+    color: #ffffff;
+}
+
+/* Keyframes for smooth infinite loop translation */
+@keyframes scrollInfinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 
 /* ---------------------- SECTION DEFAULT / FOOTER ---------------------- */
 
