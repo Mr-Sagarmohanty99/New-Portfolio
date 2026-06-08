@@ -212,5 +212,100 @@ if (contactForm) {
 
   });
 }
+
+contactForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const response =
+    grecaptcha.getResponse();
+
+    if(response.length === 0){
+
+        alert("Please verify that you're not a robot.");
+
+        return;
+    }
+
+    if(!validateForm()){
+        return;
+    }
+
+    emailjs.sendForm(
+        "service_ct8ittg",
+        "template_w4zhi9b",
+        this
+    )
+
+    .then(() => {
+
+        alert("Message sent successfully!");
+
+        contactForm.reset();
+
+        grecaptcha.reset();
+
+    })
+
+    .catch((error) => {
+
+        console.error(error);
+
+    });
+
+});
   
 }); // end DOMContentLoaded
+
+// Human Verification Checkbox
+
+const verifyBtn =
+document.getElementById("verifyBtn");
+
+if(verifyBtn){
+
+verifyBtn.addEventListener("click",()=>{
+
+    document.querySelector(".check-circle")
+    .innerHTML = "✓";
+
+    document.querySelector(".check-circle")
+    .style.background="#00ff88";
+
+    document.querySelector(".check-circle")
+    .style.color="#000";
+
+    document.getElementById("statusText")
+    .textContent="Verification Successful...";
+
+    document.querySelector(".loading-fill")
+    .style.width="100%";
+
+    setTimeout(()=>{
+
+        document.getElementById("statusText")
+        .textContent="Access Granted";
+
+    },1500);
+
+    setTimeout(()=>{
+
+        document.getElementById("access-screen")
+        .style.opacity="0";
+
+        document.getElementById("access-screen")
+        .style.pointerEvents="none";
+
+    },3000);
+
+    setTimeout(()=>{
+
+        document.getElementById("access-screen")
+        .remove();
+
+    },3500);
+
+});
+
+}
+
