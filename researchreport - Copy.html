@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https://Sagar Portfolio/Research-Report.database</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+        .back-btn:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Header section */
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Category Grid */
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Report Cards style (Glassmorphism look) */
+        .report-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .report-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            width: max-content;
+        }
+
+        .badge-ece {
+            background-color: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .badge-finance {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .card-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+        }
+
+        .view-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.2s;
+        }
+
+        .view-link:hover {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            body { padding: 1.5rem 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back button to main portfolio -->
+        <a href="index.html" class="back-btn">&#8592; Back to Portfolio</a>
+
+        <header>
+            <h1>Research & Technical Reports</h1>
+            <p>A collection of my documentations, academic studies, and Research Reports.</p>
+        </header>
+
+        <div class="reports-grid">
+
+            <!-- Card 1: ECE/Industrial Report -->
+            <div class="report-card">
+                <div>
+                    <span class="badge badge-ece">Industrial Training</span>
+                    <h2 class="card-title">Vocational Training Report:Industrial Automation Systems</h2>
+                    <p class="card-description">A comprehensive study on industrial communication protocols, signal processing mechanisms, and hardware workflows observed during vocational training at a PSU entity (BHEL, Haridwar).</p>
+                </div>
+                <div class="card-meta">
+                    <span>Format: PDF</span>
+                    <a href="" target="_blank" class="view-link">View Report &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 2: Market Analysis Report -->
+            <div class="report-card">
+                <div>
+                    <span class="badge badge-finance">Major Project</span>
+                    <h2 class="card-title">IoT Enabled Smart Railway Track Crack Detection</h2>
+                    <p class="card-description">A Technical document applying research patterns, Problem Statement, Prototype Idea, Solution for major PSU sector companies and Indian Railways.</p>
+                </div>
+                <div class="card-meta">
+                    <span>Format: PDF</span>
+                    <a href="https://drive.google.com/file/d/1XOBzeiM-Q4g0d-kGuqWNW7_OA_I8dqdD/view?usp=drive_link" target="_blank" class="view-link">View Report &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 3: ECE Project Report -->
+            <div class="report-card">
+                <div>
+                    <span class="badge badge-ece">Techincal Seminar</span>
+                    <h2 class="card-title">Quantum Computation Architecture in VLSI</h2>
+                    <p class="card-description">Detailed system design and techincal documentation explaining microcontroller integration with Quantum Architecture and reliable accurate design techniques with testabilitites.</p>
+                </div>
+                <div class="card-meta">
+                    <span>Format: PDF</span>
+                    <a href="https://drive.google.com/file/d/1ghPeJIFYT7RECJ5vDim47thzt6LmYcom/view?usp=drive_link" target="_blank" class="view-link">View Report &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
