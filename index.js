@@ -285,7 +285,6 @@ verifyBtn.addEventListener("click",()=>{
 
         document.getElementById("statusText")
         .textContent="Access Granted!!";
-        .textContent="Thank You, from SEIL";
 
     },1500);
 
