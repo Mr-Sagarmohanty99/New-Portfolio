@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials & Recommendations | Sagar</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-blue: #3b82f6;
+            --star-color: #fbbf24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 3rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+        .back-btn:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Header section */
+        header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Testimonial Grid */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Glassmorphism Testimonial Card */
+        .testimonial-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(8px);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.05);
+        }
+
+        /* Large Quote Icon behind text */
+        .quote-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 3.5rem;
+            color: var(--accent-blue);
+            opacity: 0.08;
+            font-family: Georgia, serif;
+        }
+
+        .stars {
+            color: var(--star-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        /* User Profile Section inside Card */
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.2rem;
+        }
+
+        .user-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--accent-blue);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            font-size: 0.95rem;
+        }
+
+        .user-details h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.15rem;
+        }
+
+        .user-details span {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            body { padding: 2rem 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back button to main portfolio -->
+        <a href="index.html" class="back-btn">&#8592; Back to Portfolio</a>
+
+        <header>
+            <h1>Testimonials & Recommendations</h1>
+            <p>Endorsements and feedback from industry supervisors, mentors, and academic peers.</p>
+        </header>
+
+        <div class="testimonial-grid">
+
+            <!-- Card 1: PSU Training Manager -->
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Sagar exhibited excellent analytical approach during his Industrial Vocational Training. His interest in hardware testing protocols and eagerness to grasp complex system operations was remarkable."
+                    </p>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">TS</div>
+                    <div class="user-details">
+                        <h3>Dy. Manager, CNC WE&S</h3>
+                        <span>Bharat Heavy Electricals Limited, Haridwar (BHEL)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Financial/Trading Peer -->
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "His data-backed approach to market technical analysis is solid. Sagar's research parameters on long-term setups and chart metrics are highly strategic and deeply calculated."
+                    </p>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">AD</div>
+                    <div class="user-details">
+                        <h3>Ankit Das</h3>
+                        <span>Independent Researcher / Trader</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: ECE Project Partner -->
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Great team player and exceptional with microcontrollers. Sagar's firmware logic design and patience during hardware debugging execution were core to our project's success."
+                    </p>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">RK</div>
+                    <div class="user-details">
+                        <h3>Sneha N</h3>
+                        <span>Program Manager, Emertxe Information Technologies</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
