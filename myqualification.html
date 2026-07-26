@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualifications | SRECIL Credential Portal</title>
+    <style>
+        :root {
+            --bg-color: #060913;
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --border-color: rgba(59, 130, 246, 0.18);
+            --neon-blue: #3b82f6;
+            --neon-green: #10b981;
+            --neon-amber: #f59e0b;
+            --text-main: #f3f4f6;
+            --text-muted: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', monospace, sans-serif; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(to right, #fff, var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        /* PREMIUM LOGO SHOWCASE DOCK */
+        .institution-dock {
+            margin-top: 1.5rem;
+            background: rgba(11, 15, 25, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+        }
+
+        .dock-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--neon-blue);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .logo-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .logo-card:hover {
+            border-color: var(--neon-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .logo-card img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 4px rgba(255,255,255,0.2));
+        }
+
+        .logo-text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            letter-spacing: 0.5px;
+        }
+
+        /* Major Highlight Card */
+        .hero-degree-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+
+        .hero-degree-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: linear-gradient(to bottom, var(--neon-blue), var(--neon-green));
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .pulse-dot {
+            width: 8px; height: 8px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-green);
+            animation: pulse 1.5s infinite;
+        }
+
+        .university-title {
+            color: var(--neon-blue);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0.3rem;
+        }
+
+        .college-title {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .expand-btn {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--neon-blue);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .expand-btn:hover { background: var(--neon-blue); }
+
+        .hidden-details {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Modular Grid */
+        .grid-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .sub-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: 0.3s ease;
+        }
+
+        .sub-card:hover {
+            border-color: var(--neon-blue);
+            transform: translateY(-3px);
+        }
+
+        .sub-card h3 { color: #fff; font-size: 1.1rem; margin-bottom: 0.4rem; }
+        .sub-card .tag-sub { color: var(--neon-blue); font-size: 0.85rem; margin-bottom: 0.8rem; display: block; }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Academic & Professional Portfolio</h1>
+            <p style="color: var(--text-muted); margin-top: 0.4rem;">SRECIL Verified Qualification Registry // Sagar Mohanty</p>
+
+            <!-- DESIGNED LOGO HEADER DOCK -->
+            <div class="institution-dock">
+                <div class="dock-label">Affiliation & Accreditation Framework</div>
+                <div class="logo-grid">
+                    
+                    <!-- BPUT Logo -->
+                    <div class="logo-card">
+                        <img src="images/bput-logo.png" alt="BPUT" onerror="this.style.display='none'">
+                        <span class="logo-text">BPUT Rourkela</span>
+                    </div>
+
+                    <!-- AIET College Logo -->
+                    <div class="logo-card">
+                        <img src="images/aiet-logo.png" alt="AIET" onerror="this.style.display='none'">
+                        <span class="logo-text">AIET Bhubaneswar</span>
+                    </div>
+
+                    <!-- AICTE Logo -->
+                    <div class="logo-card">
+                        <img src="images/aicte-logo.png" alt="AICTE" onerror="this.style.display='none'">
+                        <span class="logo-text">AICTE</span>
+                    </div>
+
+                    <!-- UGC Logo -->
+                    <div class="logo-card">
+                        <img src="images/ugc-logo.png" alt="UGC" onerror="this.style.display='none'">
+                        <span class="logo-text">UGC</span>
+                    </div>
+
+                    <!-- NAAC Logo -->
+                    <div class="logo-card">
+                        <img src="images/naac-logo.png" alt="NAAC" onerror="this.style.display='none'">
+                        <span class="logo-text">NAAC</span>
+                    </div>
+
+                    <!-- NBA Logo -->
+                    <div class="logo-card">
+                        <img src="images/nba-logo.png" alt="NBA" onerror="this.style.display='none'">
+                        <span class="logo-text">NBA</span>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- Major 4-Year B.Tech Milestone Card -->
+        <div class="hero-degree-card">
+            <div class="status-pill">
+                <div class="pulse-dot"></div>
+                Provisional Certificate Issued (4-Year Tenure Completed)
+            </div>
+
+            <h2 style="font-size: 1.6rem; color: #fff;">Bachelor of Technology (B.Tech) - ECE</h2>
+            <div class="university-title">🎓 Biju Patnaik University of Technology (BPUT), Rourkela</div>
+            <div class="college-title">🏫 Aryan Institute of Engineering and Technology (AIET), Bhubaneswar</div>
+
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                Specialized in <strong>Electronics & Communication Engineering</strong>. Covered embedded hardware architectures, signals & telemetry systems, wireless protocols, and industrial automation.
+            </p>
+
+            <button class="expand-btn" onclick="toggleDetails()">🔍 View BPUT Certification Status & Modules</button>
+
+            <div class="hidden-details" id="btechDetails">
+                <p><strong>• Program Status:</strong> Graduated (Provisional Degree Certificate issued by BPUT University).</p>
+                <p><strong>• Core Specializations:</strong> Embedded Systems, Microcontrollers (ESP32/8051), Digital Signal Processing, Telecom Networks.</p>
+                <p><strong>• Institutional Accreditation:</strong> Aryan Institute of Engineering & Technology is recognized by AICTE, affiliated with BPUT Rourkela, and certified under NAAC/NBA benchmarks.</p>
+            </div>
+        </div>
+
+        <!-- Specialized Vocational & Extra-Curricular Education -->
+        <h2 style="color: #fff; margin-top: 3rem; font-size: 1.3rem;">⚡ Industrial & Specialized Certifications</h2>
+        <div class="grid-section">
+            <div class="sub-card" style="border-left: 3px solid var(--neon-amber);">
+                <h3>PLC & Industrial Automation Training</h3>
+                <span class="tag-sub">Industrial Telemetry & Control Systems</span>
+                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
+                    Hands-on expertise in Programmable Logic Controllers (PLC), Ladder Logic programming, SCADA monitoring, and industrial sensor integration.
+                </p>
+            </div>
+
+            <div class="sub-card" style="border-left: 3px solid var(--neon-blue);">
+                <h3>PGDCA</h3>
+                <span class="tag-sub">Post Graduate Diploma in Computer Applications</span>
+                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
+                    Comprehensive training in computer fundamentals, software applications, system administration, database management, and programming basics.
+                </p>
+            </div>
+        </div>
+
+        <!-- Secondary & Higher Secondary Education -->
+        <h2 style="color: #fff; margin-top: 2.5rem; font-size: 1.3rem;">🏫 Academic Foundation</h2>
+        <div class="grid-section">
+            <div class="sub-card">
+                <h3>Higher Secondary Education (12th Science)</h3>
+                <span class="tag-sub">Physics, Chemistry & Mathematics (PCM)</span>
+                <p style="color: var(--text-muted); font-size: 0.88rem;">
+                    Completed secondary science track establishing core analytical, mathematical, and physical science fundamentals.
+                </p>
+            </div>
+
+            <div class="sub-card">
+                <h3>Secondary Board Examination (10th)</h3>
+                <span class="tag-sub">General Academics</span>
+                <p style="color: var(--text-muted); font-size: 0.88rem;">
+                    Foundational schooling with strong emphasis on core sciences and mathematics.
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" style="color: var(--neon-blue); text-decoration: none; border: 1px solid var(--border-color); padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 0.9rem; transition: 0.2s;">&larr; Return to Main Console</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails() {
+            const details = document.getElementById('btechDetails');
+            details.style.display = (details.style.display === 'block') ? 'none' : 'block';
+        }
+
+        // Anti-Copy Protection
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 's' || e.key === 'u' || e.key === 'a') || e.key === 'F12') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
