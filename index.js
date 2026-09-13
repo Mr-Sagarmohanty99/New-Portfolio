@@ -309,3 +309,25 @@ verifyBtn.addEventListener("click",()=>{
 
 }
 
+
+ document.addEventListener('DOMContentLoaded', () => {
+            const statusText = document.getElementById('status-text');
+            const splashScreen = document.getElementById('splash-screen');
+            const mainInterface = document.getElementById('main-interface');
+
+            // Boot Status Text Updates
+            setTimeout(() => {
+                statusText.innerText = "INITIALIZING CORE HARDWARE MODULES...";
+            }, 1000);
+
+            setTimeout(() => {
+                statusText.innerText = "AUTHENTICATING PORTFOLIO DATA...";
+            }, 2000);
+
+            // 3-Second Transition
+            setTimeout(() => {
+                splashScreen.classList.add('splash-hidden');
+                mainInterface.classList.add('interface-visible');
+            }, 3000);
+        });
+
