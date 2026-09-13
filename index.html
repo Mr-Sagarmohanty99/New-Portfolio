@@ -14,6 +14,77 @@
 
 <body>
 
+  <div id="splash-screen">
+        
+        <div class="psu-emblem-container">
+            <div class="emblem-glow"></div>
+
+            <!-- Custom Vector SVG Emblem (Engineering Gear + ECE Electron Orbits + Microchip Core) -->
+            <svg class="psu-svg-logo" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#fbbf24"/>
+                        <stop offset="50%" stop-color="#f59e0b"/>
+                        <stop offset="100%" stop-color="#92400e"/>
+                    </linearGradient>
+                    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#38bdf8"/>
+                        <stop offset="100%" stop-color="#0284c7"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- OUTER GEAR / COG WHEEL (Engineering & Automation Symbol) -->
+                <g class="gear-rotate">
+                    <circle cx="100" cy="100" r="82" stroke="url(#goldGrad)" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+                    <!-- 8 Industrial Cog Teeth -->
+                    <rect x="94" y="8" width="12" height="12" rx="2" fill="url(#goldGrad)"/>
+                    <rect x="94" y="180" width="12" height="12" rx="2" fill="url(#goldGrad)"/>
+                    <rect x="8" y="94" width="12" height="12" rx="2" fill="url(#goldGrad)"/>
+                    <rect x="180" y="94" width="12" height="12" rx="2" fill="url(#goldGrad)"/>
+                    <rect x="33" y="33" width="12" height="12" rx="2" transform="rotate(45 39 39)" fill="url(#goldGrad)"/>
+                    <rect x="155" y="155" width="12" height="12" rx="2" transform="rotate(45 161 161)" fill="url(#goldGrad)"/>
+                    <rect x="33" y="155" width="12" height="12" rx="2" transform="rotate(-45 39 161)" fill="url(#goldGrad)"/>
+                    <rect x="155" y="33" width="12" height="12" rx="2" transform="rotate(-45 161 39)" fill="url(#goldGrad)"/>
+                </g>
+
+                <!-- MIDDLE SHIELD RING (IIT / Crest Style Inner Border) -->
+                <circle cx="100" cy="100" r="70" fill="#0b132b" stroke="url(#goldGrad)" stroke-width="2.5"/>
+
+                <!-- ELECTRON ORBITS (ECE / Semiconductor Symbolism) -->
+                <g class="orbit-spin-1">
+                    <ellipse cx="100" cy="100" rx="55" ry="18" stroke="url(#blueGrad)" stroke-width="1.5" fill="none" transform="rotate(30 100 100)"/>
+                    <circle cx="150" cy="115" r="3.5" fill="#38bdf8"/>
+                </g>
+                <g class="orbit-spin-2">
+                    <ellipse cx="100" cy="100" rx="55" ry="18" stroke="url(#blueGrad)" stroke-width="1.5" fill="none" transform="rotate(-30 100 100)"/>
+                    <circle cx="50" cy="115" r="3.5" fill="#fbbf24"/>
+                </g>
+
+                <!-- CENTER MICROCHIP & MONOGRAM CORE (Embedded Core) -->
+                <rect x="76" y="76" width="48" height="48" rx="6" fill="#030712" stroke="url(#goldGrad)" stroke-width="2"/>
+                <!-- Chip Pins -->
+                <line x1="86" y1="70" x2="86" y2="76" stroke="#fbbf24" stroke-width="2"/>
+                <line x1="100" y1="70" x2="100" y2="76" stroke="#fbbf24" stroke-width="2"/>
+                <line x1="114" y1="70" x2="114" y2="76" stroke="#fbbf24" stroke-width="2"/>
+                <line x1="86" y1="124" x2="86" y2="130" stroke="#fbbf24" stroke-width="2"/>
+                <line x1="100" y1="124" x2="100" y2="130" stroke="#fbbf24" stroke-width="2"/>
+                <line x1="114" y1="124" x2="114" y2="130" stroke="#fbbf24" stroke-width="2"/>
+
+                <!-- SM Monogram Text inside Core -->
+                <text x="100" y="106" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="19" fill="url(#goldGrad)" text-anchor="middle">SM</text>
+            </svg>
+        </div>
+
+        <div class="welcome-title">Welcome To <span>Sagar Mohanty's</span> Portfolio</div>
+        <div class="welcome-subtitle">Electronics & Communication Engineering</div>
+        
+        <div class="progress-bar-wrap">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="system-status" id="status-text">SYSTEM INITIALIZATION...</div>
+    </div>
+
+
   <!-- Navbar -->
   <header class="nav" id="nav">
     <div class="brand">
